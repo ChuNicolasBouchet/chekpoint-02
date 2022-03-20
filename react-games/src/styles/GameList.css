@@ -1,0 +1,13 @@
+.wrapper__gameList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(253, 237, 218);
+    text-align: center;
+}
+
+.wrapper__gameCards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import Game from "./Game";
+import '../styles/GameList.css'
 
 function GameList(props) {
     const [games, setGames] = useState([]);
@@ -20,17 +21,17 @@ function GameList(props) {
       };
 
     return (
-        <div>
-            <div className="wrapper_btn_filter_rating">
-                <button type="button" onClick={handleRatedGamesClick}>
+        <div className="wrapper__gameList">
+            <div className="wrapper_btn__filter__rating">
+                <button className="btn" type="button" onClick={handleRatedGamesClick}>
                     {showRatedOnly ? 'All' : 'Above 4.5'} rated games
                 </button>
             </div>
-            <div className="wrapper_list_games">    
+            <div className="wrapper__gameCards">    
                 {games
                     .filter((game) => !showRatedOnly || game.rating > 4.5)
                     .map((game) => {
-                    return( <Game key={game.id} id={game.id} name={game.name} released={game.background_image} rating={game.rating} removeGame={removeGame} />
+                    return( <Game key={game.id} id={game.id} name={game.name} released={game.released} rating={game.rating} background_image={game.background_image} removeGame={removeGame} />
                     )})
                 }
             </div>

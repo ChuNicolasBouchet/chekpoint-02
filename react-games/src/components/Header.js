@@ -1,7 +1,12 @@
 import React from "react";
+import '../styles/Header.css'
 
 function Header(props) {
-    return <h1>Welcome to the {props.siteName} website.</h1>;
+    return (
+        <div className="wrapper__title">
+            <h1 className="title">Welcome to the {props.siteName} website</h1>
+        </div>
+    )
     
 }
 

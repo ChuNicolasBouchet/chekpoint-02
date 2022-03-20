@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
+import '../styles/GameDetails.css';
 
 function GameDetails() {
 
@@ -15,12 +16,16 @@ function GameDetails() {
     
    
     return (
-        <div>
-          <NavLink to='/'><button>Back to gameList</button></NavLink>
-          <h1>{gameDetails.name}</h1>
-          <h1>{gameDetails.slug}</h1>
- 
-
+        <div className='wrapper__gamedetails'>
+          <NavLink to='/'><button className="btn">Back to gameList</button></NavLink>
+          <div className="card__gamedetails">
+            <img className='card__gamedetails__img' src={gameDetails.background_image} alt={gameDetails.name} />
+            <div className='card__gamedetails__description'>
+              <h1>{gameDetails.name}</h1>
+              <p> Rated : {gameDetails.rating} / 5</p>
+              <p>Released on : {gameDetails.released}</p>
+            </div>      
+          </div>
         </div>
       );
     
