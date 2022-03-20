@@ -1,11 +1,16 @@
-import React from "react";
+import { NavLink } from 'react-router-dom';
 
 function Game(props) {
     return (
     <div>
-        <h3>{props.name}</h3>
+        <NavLink to={`/games/${props.id}`}>
+            <span className="game__card__title">
+                {props.name}
+            </span>
+        </NavLink>
         <p>{props.released}</p>
-        <p>{props.rating}</p>
+        <p>{props.rating} / 5</p>
+        <button type="button" className="remove-btn" onClick={() => props.removeGame(props.id)}>Remove game</button>        
     </div>
     );
     
